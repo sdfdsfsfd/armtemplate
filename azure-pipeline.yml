@@ -15,4 +15,4 @@ steps:
     resourceGroupName: rg2
     location: 'East US'
     csmFile: blobcontainre.json
-    overrideParameters: '-storageAccountName acnt1324 -containerName "logs1" -location "[resourceGroup().location]"'
+    overrideParameters: '-storageAccountName "${{variables.stac}}" -containerName "${{variables.cont}}" -location "[resourceGroup().location]"'
