@@ -1,6 +1,9 @@
 trigger: none
 
-pool: windows-lates
+pool: windows-latest
+
+variables:
+- template: envar.yml
 
 steps:
 - task: AzureResourceManagerTemplateDeployment@3
