@@ -1,0 +1,14 @@
+trigger: none
+
+pool: windows-lates
+
+steps:
+- task: AzureResourceManagerTemplateDeployment@3
+  displayName: 'ARM Template deployment: Resource Group scope'
+  inputs:
+    azureResourceManagerConnection: 'Pay-As-You-Go(b5e3024f-bc2c-4de4-8db0-bd025a10d518)'
+    subscriptionId: 'b5e3024f-bc2c-4de4-8db0-bd025a10d518'
+    resourceGroupName: rg2
+    location: 'East US'
+    csmFile: blobcontainre.json
+    overrideParameters: '-storageAccountName acnt1324 -containerName "logs1" -location "[resourceGroup().location]"'
